@@ -1,7 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
 import postRoutes from "./routes/posts.js";
-
+import lowDb from "lowdb";
+import FileSync from "lowdb/adapters/FileSync.js";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+dotenv.config();
+connectDB();
+// export const db = new lowDb(new FileSync("db.json"));
 const app = express();
 const PORT = 5000;
 
